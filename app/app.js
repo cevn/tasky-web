@@ -11,3 +11,4 @@ var App = Ember.Application.extend({
 });
 
 export default App;
+
