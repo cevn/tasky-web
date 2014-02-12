@@ -4,7 +4,7 @@ Webapp for cs435.
 
 ## Install
 
-    git clone repository 
+    git clone git@github.com:cevn/tasky-web.git 
     npm install
     bower install
 
