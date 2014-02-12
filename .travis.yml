@@ -12,9 +12,11 @@ before_script:
 - bower install
 
 deploy:
+  strategy: git
   provider: heroku
   api_key:
     secure: NUWj0eyEh9Rv6RL1f53dJ8Sw6mzlneV1JpNKnRCxtflYNdDs/v84TMiPoRIrFMDM+N++H4ey6330lUsPhf12c2hGXp5UP+iHa+rmA9i2kyzfQm4j5W4uBmurHCiOOd3zy6c4SCBy5t5XtJM9UqLPPhpdAQBZB24ko0cUl671ogI=
   app: tasky-web
   on:
     repo: cevn/tasky-web
+
