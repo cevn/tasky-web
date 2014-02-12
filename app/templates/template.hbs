@@ -1,0 +1,40 @@
+<section id='taskapp'>
+  <header id='header'>
+    <h1>tasks</h1>
+    {{input type='text' id='new-task' placeholder='What needs to be done?'
+            value=newTitle action='createTodo'}}
+  </header>
+
+  <section id='main'>
+    {{outlet}}
+
+    {{input type='checkbox' id='toggle-all' checked=allAreDone}}
+  </section>
+
+  <footer id='footer'>
+    <span id='task-count'>
+      <strong>{{active.length}}</strong> {{inflection}} left
+    </span>
+    <ul id='filters'>
+      <li>
+        {{link-to 'All' 'tasks.index' activeClass='selected'}}
+      </li>
+      <li>
+        {{link-to 'Active' 'tasks.active' activeClass='selected'}}
+      </li>
+      <li>
+        {{link-to 'Completed' 'tasks.completed' activeClass='selected'}}
+      </li>
+    </ul>
+
+    {{#if hasCompleted}}
+      <button id='clear-completed' {{action 'clearCompleted'}}>
+        Clear completed ({{completed.length}})
+      </button>
+    {{/if}}
+  </footer>
+</section>
+
+<footer id='info'>
+  <p>Double-click to edit a task</p>
+</footer>
