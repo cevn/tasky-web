@@ -1,5 +1,20 @@
-<ul id="todo-list"> 
-  {{#each}} 
-  <li>{{title}}</li> 
+  {{#each itemController='task'}}
+  <div {{bind-attr class='isCompleted:completed isEditing:editing row'}}> 
+
+      {{#if isEditing}} 
+        {{edit-task class="edit" value=title focus-out='acceptChanges'
+                                             insert-newline='acceptChanges'}} 
+      {{else}} 
+      <div class="small-2 columns"> 
+      {{input type='checkbox' checked=isCompleted class='toggle'}}
+      </div> 
+
+      <div class="small-5 columns"> 
+        <label {{action 'editTask' on='doubleClick'}}>{{title}}</label>
+      </div> 
+      <div class="small-5 columns"> 
+        <button {{action 'removeTask'}} class='button tiny alert'>Remove Task</button>
+      </div> 
+      {{/if}}
+    </div> 
   {{/each}}
-</ul> 

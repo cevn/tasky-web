@@ -1,4 +1,4 @@
-// routes/todos/active.js
+// routes/tasks/active.js
 export default Ember.Route.extend({
   model: function(){
     return this.store.filter('task', active);
@@ -8,6 +8,6 @@ export default Ember.Route.extend({
   }
 });
 
-function active(todo) {
-  return !todo.get('isCompleted');
+function active(task) {
+  return !task.get('isCompleted');
 }

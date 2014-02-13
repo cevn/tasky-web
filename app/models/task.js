@@ -1,5 +1,5 @@
 var Task = DS.Model.extend({
-  name: DS.attr('string'), 
+  title: DS.attr('string'), 
   due: DS.attr('date'), 
   isCompleted: DS.attr('boolean'), 
 

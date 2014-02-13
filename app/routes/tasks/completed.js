@@ -1,5 +1,3 @@
-// routes/todos/completed.js
-
 export default Ember.Route.extend({
   model: function(){
     return this.store.filter('task', completed);
@@ -9,6 +7,6 @@ export default Ember.Route.extend({
   }
 });
 
-function completed(todo) {
-  return todo.get('isCompleted');
+function completed(task) {
+  return task.get('isCompleted');
 }

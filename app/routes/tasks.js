@@ -1,6 +1,5 @@
-// routes/todos/index.js
 export default Ember.Route.extend({
   model: function() {
-    return this.modelFor('tasks');
+    return this.store.find('task');
   }
 });

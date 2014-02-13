@@ -6,14 +6,9 @@ Router.map(function() {
   this.route('helper-test');
 
   this.resource('tasks', { path: '/' },  function() { 
-    this.route('new'); 
     this.route('active'); 
     this.route('completed'); 
   });  
-
-  this.resource('users', function() { 
-    this.route('new'); 
-  }); 
 
 });
 
