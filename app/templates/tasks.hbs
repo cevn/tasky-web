@@ -1,8 +1,11 @@
 <section id='taskapp'>
   <div class="row"> 
 
-    <h2 class="text-center spacer" id="title">Current Tasks</h2>
+    <h1 class="text-center spacer" id="title"> Tasks</h1>
     <div class="small-6 small-centered columns spacer"> 
+
+      {{input type='text' id='new-task' placeholder='What needs to be done?' value=newTitle action='createTask'}} 
+
       <section id='main'>
         {{outlet}}
 
