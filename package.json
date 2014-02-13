@@ -14,7 +14,7 @@
     "start": "grunt server",
     "build": "grunt build:debug",
     "test": "grunt test:ci",
-    "postinstall": "grunt dist"
+    "postinstall": "bower install; grunt dist"
   },
   "repository": {
     "type": "git",
