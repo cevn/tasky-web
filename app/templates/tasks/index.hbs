@@ -1,0 +1,18 @@
+  {{#each itemController='task'}}
+  <div {{bind-attr class='isCompleted:completed isEditing:editing row'}}> 
+
+      {{#if isEditing}} 
+      {{else}} 
+      <div class="small-1 columns"> 
+      {{input type='checkbox' checked=isCompleted class='toggle'}}
+      </div> 
+
+      <div class="small-7 columns"> 
+        <label {{action 'editTask' on='doubleClick'}}>{{title}}</label>
+      </div> 
+      <div class="small-4 columns"> 
+        <button {{action 'removeTask'}}  class='button tiny alert right'>Remove Task</button>
+      </div> 
+      {{/if}}
+    </div> 
+  {{/each}}
