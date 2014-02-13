@@ -19,8 +19,9 @@ You need to have node.js as well as npm to be on your system.
 
 ## Deploying 
 
-    heroku git:remote -a tasky-web 
-    git push heroku master 
+Deployment is done on-the-fly by [Travis-CI](travis-ci.org). After
+a push to master, travis-ci will automagically run the test suite. If
+the tests are all successful, it uses my heroku details to push to the webapp. 
 
 ## Testing 
 
