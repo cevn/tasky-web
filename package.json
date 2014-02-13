@@ -1,6 +1,6 @@
 {
-  "name": "app-kit",
-  "namespace": "appkit",
+  "name": "tasky",
+  "namespace": "tasky",
   "APIMethod": "stub",
   "proxyURL": "http://localhost:8000",
   "proxyPath": "/api",
@@ -14,7 +14,7 @@
     "start": "grunt server",
     "build": "grunt build:debug",
     "test": "grunt test:ci",
-    "postinstall": "bower install"
+    "postinstall": "grunt dist; bower install"
   },
   "repository": {
     "type": "git",
