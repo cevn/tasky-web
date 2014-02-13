@@ -1,0 +1,43 @@
+<section id='taskapp'>
+  <div class="row"> 
+
+    <h2 class="text-center spacer" id="title">Current Tasks</h2>
+    <div class="small-6 small-centered columns spacer"> 
+      <section id='main'>
+        {{outlet}}
+
+        {{input type='checkbox' id='toggle-all' checked=allAreDone}}
+        Toggle All
+
+      </section>
+
+
+  <footer id='footer'>
+    <span id='task-count'>
+      <strong>{{active.length}}</strong> {{inflection}} left
+    </span>
+    <ul id='filters' class="inline-list" >
+      <li>
+        {{link-to 'All' 'tasks.index' activeClass='selected'}}
+      </li>
+      <li>
+        {{link-to 'Active' 'tasks.active' activeClass='selected'}}
+      </li>
+      <li>
+        {{link-to 'Completed' 'tasks.completed' activeClass='selected'}}
+      </li>
+    </ul>
+
+    {{#if hasCompleted}}
+      <button id='clear-completed' {{action 'clearCompleted'}}>
+        Clear completed ({{completed.length}})
+      </button>
+    {{/if}}
+  </footer>
+</section>
+
+<footer id='info'>
+  <p>Double-click to edit a task</p>
+</footer>
+    </div> 
+  </div> 
