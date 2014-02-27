@@ -21,13 +21,14 @@
 
 
   <footer id='footer'>
-    <div class="row spacer"> 
+    <div class="row spacer text-center"> 
     <span id='task-count'>
       <strong>{{active.length}}</strong> {{inflection}} left
     </span>
     {{#if hasCompleted}}
-      <button id='clear-completed' class="btn btn-sm btn-success" {{action 'clearCompleted'}}>
-        Clear completed ({{completed.length}})
+      <button id='clear-completed' class="btn btn-success" {{action 'clearCompleted'}}>
+        Clear completed 
+        <span class="badge badge-inverse">{{completed.length}}</span>
       </button>
     {{/if}}
   </div> 
@@ -35,7 +36,8 @@
 </section>
 
 <footer id='info'>
-  <p>Double-click to edit a task</p>
+  <p>Click to edit a task.</p>
 </footer>
-    </div> 
-  </div> 
+
+</div> 
+</div> 
