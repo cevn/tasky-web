@@ -1,12 +1,18 @@
-<ul id="task-list" class="list-unstyled">   
+<div id="task-list" class="row spacer"> 
 
+<div class="col-lg-8 col-lg-offset-2"> 
 {{#each itemController='task'}}
-  <li {{bind-attr class='isCompleted:completed isEditing:editing row'}}> 
-    {{input type='checkbox' checked=isCompleted}}
-    <label {{action 'editTask' on='doubleClick'}}>{{title}}</label>
-    <i {{action 'removeTask'}}  class='glyphicon glyphicon-remove'></i>
-  </li> 
-
+<div class="row" {{bind-attr class='isCompleted:completed isEditing:editing'}}> 
+  <div class="input-group small-spacer">
+    <span class="input-group-addon"> 
+      {{input type='checkbox' checked=isCompleted}}
+    </span>
+    {{input type='text' class='form-control' value=title}}
+    <span class="input-group-btn">
+      <button {{action 'removeTask'}} class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+    </span>
+    </div><!-- /.input-group -->
+  </div><!-- /.row -->
   {{/each}}
-
-</ul>
+</div><!-- /.col-lg-6--> 
+</div><!-- /.row spacer--> 
