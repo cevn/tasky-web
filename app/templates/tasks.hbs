@@ -1,41 +1,36 @@
 <section id='taskapp'>
   <div class="row"> 
-
     <h1 class="text-center spacer" id="title">Tasks</h1>
-    <div class="small-6 small-centered columns spacer"> 
+    <div class="col-md-8 col-md-offset-2"> 
 
-      {{input type='text' id='new-task' placeholder='What needs to be done?' value=newTitle action='createTask'}} 
+    <div class="btn-group btn-group-justified" id="filters">
+      {{link-to 'All' 'tasks.index' class='btn btn-lg btn-default' activeClass='btn-primary'}}
+      {{link-to 'Active' 'tasks.active' class='btn btn-lg btn-default' activeClass='btn-primary'}}
+      {{link-to 'Completed' 'tasks.completed' class='btn btn-lg btn-default' activeClass='btn-primary'}}
+    </div>
+
 
       <section id='main'>
         {{outlet}}
 
-        {{input type='checkbox' id='toggle-all' checked=allAreDone}}
-        Toggle All
-
       </section>
+
+      <div class="form-group spacer">
+        {{input type='text' class="form-control" id='new-task' placeholder='What needs to be done?' value=newTitle action='createTask'}} 
+      </div> 
 
 
   <footer id='footer'>
+    <div class="row spacer"> 
     <span id='task-count'>
       <strong>{{active.length}}</strong> {{inflection}} left
     </span>
-    <ul id='filters' class="inline-list" >
-      <li>
-        {{link-to 'All' 'tasks.index' activeClass='selected'}}
-      </li>
-      <li>
-        {{link-to 'Active' 'tasks.active' activeClass='selected'}}
-      </li>
-      <li>
-        {{link-to 'Completed' 'tasks.completed' activeClass='selected'}}
-      </li>
-    </ul>
-
     {{#if hasCompleted}}
-      <button id='clear-completed' {{action 'clearCompleted'}}>
+      <button id='clear-completed' class="btn btn-sm btn-success" {{action 'clearCompleted'}}>
         Clear completed ({{completed.length}})
       </button>
     {{/if}}
+  </div> 
   </footer>
 </section>
 
