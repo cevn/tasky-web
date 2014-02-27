@@ -1,49 +1,4 @@
 module.exports = function(grunt) {
-  // To support Coffeescript, SASS, LESS and others, just install
-  // the appropriate grunt package and it will be automatically included
-  // in the build process:
-  //
-  // * for Coffeescript, run `npm install --save-dev grunt-contrib-coffee`
-  //
-  // * for SCSS (without SASS), run `npm install --save-dev grunt-sass`
-  // * for SCSS/SASS support (may be slower), run
-  //   `npm install --save-dev grunt-contrib-sass`
-  //   This depends on the ruby sass gem, which can be installed with
-  //   `gem install sass`
-  // * for Compass, run `npm install --save-dev grunt-contrib-compass`
-  //   This depends on the ruby compass gem, which can be installed with
-  //   `gem install compass`
-  //   You should not install SASS if you have installed Compass.
-  //
-  // * for LESS, run `npm install --save-dev grunt-contrib-less`
-  //
-  // * for Stylus/Nib, `npm install --save-dev grunt-contrib-stylus`
-  //
-  // * for Emblem, run the following commands:
-  //   `npm uninstall --save-dev grunt-ember-templates`
-  //   `npm install --save-dev grunt-emblem`
-  //   `bower install emblem.js --save`
-  //
-  // * For EmberScript, run `npm install --save-dev grunt-ember-script`
-  //
-  // * for LiveReload, `npm install --save-dev connect-livereload`
-  //
-  // * for displaying the execution time of the grunt tasks,
-  //   `npm install --save-dev time-grunt`
-  //
-  // * for minimizing the index.html at the end of the dist task
-  //   `npm install --save-dev grunt-contrib-htmlmin`
-  //
-  // * for minimizing images in the dist task
-  //   `npm install --save-dev grunt-contrib-imagemin`
-  //
-  // * for using images based CSS sprites (http://youtu.be/xD8DW6IQ6r0)
-  //   `npm install --save-dev grunt-fancy-sprites`
-  //   `bower install --save fancy-sprites-scss`
-  //
-  // * for automatically adding CSS vendor prefixes (autoprefixer)
-  //   `npm install --save-dev grunt-autoprefixer`
-  //
 
   var Helpers = require('./tasks/helpers'),
       filterAvailable = Helpers.filterAvailableTasks,
@@ -207,6 +162,7 @@ module.exports = function(grunt) {
                      'less:compile',
                      'stylus:compile',
                      'copy:cssToResult',
+                     'copy:fontsToResult', 
                      'autoprefixer:app'
                      ]));
 
