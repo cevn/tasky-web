@@ -4,9 +4,10 @@ node_js:
 
 branches: 
   only:
-    - master
+  - master
 
-before_script:
+install:
+- npm install
 - npm install -g grunt-cli
 - npm install -g bower
 - bower install
